@@ -13,7 +13,7 @@ client.connect(err => {
   console.log("is it working")
 });
 
-
+// response.render i stedet for response.send
 const JokeSchema = new mongoose.Schema({
     setUp: String,
     punchLine: String,
