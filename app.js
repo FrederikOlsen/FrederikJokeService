@@ -40,6 +40,9 @@ async function main() {
 }
 main();
 
+// new shit 
+const connect = require("connect");
+const app = connect().use(connect.static(__dirname + '/FrontEnd'));
 
 
 app.listen(port, () => {
