@@ -42,9 +42,9 @@ main();
 
 // new shit 
 const connect = require("connect");
-const app = connect().use(connect.static(__dirname + '/FrontEnd'));
+const applet = connect().use(connect.static(__dirname + '/FrontEnd'));
 
 
-app.listen(port, () => {
+applet.listen(port, () => {
     console.log('app is listening on port: ' + `${port}`);
 });
