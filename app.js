@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const port = 5500;
+const port =  process.env.port||5500;
 const app = express();
 // maybe let instead idk
 
@@ -15,7 +15,7 @@ app.use(express.json());
 
 fetch("https://krdo-joke-registry.herokuapp.com/api/services",
  {form:{name:"dumbjokeservice", address:"https://dumbjokeservice.herokuapp.com/",
-  secret:"123"}});
+  secret:"333"}});
 
 
 
