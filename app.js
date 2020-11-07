@@ -3,7 +3,7 @@ const fetch = require('node-fetch');
 // const mongoose = require('mongoose'); database giver errors 
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const port =  process.env.port||5500;
+const port =  process.env.PORT||5500;
 const app = express();
 // maybe let instead idk
 
