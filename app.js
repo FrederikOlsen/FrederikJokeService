@@ -15,7 +15,7 @@ app.use(express.json());
 
 fetch("https://krdo-joke-registry.herokuapp.com/api/services",
  {form:{name:"dumbjokeservice", address:"https://dumbjokeservice.herokuapp.com/",
-  secret:"333"}});
+  secret:"123"}});
 
 
 /** Database giver errors udkommenteret
@@ -39,12 +39,12 @@ db.on('connection', () => {
 async function main() {
 }
 main();
-
+/** 
 // new shit 
 const connect = require("connect");
 const applet = connect().use(connect.static(__dirname + '/FrontEnd'));
+*/
 
-
-applet.listen(port, () => {
+app.listen(port, () => {
     console.log('app is listening on port: ' + `${port}`);
 });
