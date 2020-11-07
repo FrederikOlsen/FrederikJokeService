@@ -5,12 +5,15 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const port = 5500;
 const app = express();
+// maybe let instead idk
+
 
 app.use(express.static(__dirname + '/FrontEnd'));
 app.use(cors());
 app.use(express.json());
 
-request.post("https://krdo-joke-registry.herokuapp.com/api/services",
+
+fetch("https://krdo-joke-registry.herokuapp.com/api/services",
  {form:{name:"dumbjokeservice", address:"https://dumbjokeservice.herokuapp.com/",
   secret:"123"}});
 
