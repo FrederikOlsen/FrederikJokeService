@@ -1,9 +1,10 @@
 const jokeUrl = 'https://krdo-joke-registry.herokuapp.com/';
-const jokeModel = require('../model/jokes');
+const Joke = require('../model/jokeModel');
+//const app = require('..app');
 
 
 
-exports.getAllJokes = () => {
+ exports.getAllJokes = async () => {
     return await jokeModel.find();
 };
 
@@ -15,7 +16,7 @@ exports.deleteJokeById = (id) => {
 
 };
 
-exports.createJoke = (setup, punchline) => {
+exports.createJoke = async (setup, punchline) => {
     return await Joke.create({ setup, punchLine });
 }
 
@@ -41,8 +42,4 @@ async function updateJoke(setUp, punchLine) {
 async function deleteJoke(Joke) {
     Person.deleteOne().where('_id').eq(Joke._id).exec();
 }
-
- * 
- * 
- * 
- */
+**/

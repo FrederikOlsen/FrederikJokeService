@@ -7,5 +7,5 @@ const joke = new mongoose.Schema({
     punchline:String
 });
 
-
-const Joke = mongoose.model('jokes', joke);
+// changed Joke to jokeModel
+const jokeModel = mongoose.model('jokes', joke);
