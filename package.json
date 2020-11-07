@@ -5,7 +5,7 @@
     "main": "app.js",
     "scripts": {
       "test": "true",
-      "start": "node app.js",
+      "start": "node app.js"
     },
     "author": "Christian Kastberg",
     "license": "ISC",
