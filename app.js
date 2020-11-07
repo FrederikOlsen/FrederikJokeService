@@ -1,6 +1,6 @@
 const express = require('express');
 const fetch = require('node-fetch');
-const mongoose = require('mongoose');
+// const mongoose = require('mongoose'); database giver errors 
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const port =  process.env.port||5500;
@@ -18,7 +18,7 @@ fetch("https://krdo-joke-registry.herokuapp.com/api/services",
   secret:"333"}});
 
 
-
+/** Database giver errors udkommenteret
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://Christian:Dinmor123@cluster0.vtauz.mongodb.net/JokeDB?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true });
@@ -34,12 +34,10 @@ const db = mongoose.connection;
 db.on('connection', () => {
     console.log('Databasen er tændt');
 });
-
+*/
 
 async function main() {
-
 }
-
 main();
 
 
