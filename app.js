@@ -8,7 +8,7 @@ const app = express();
 
 
 
-app.use(express.static(__dirname + '/FrontEnd'));
+app.use(express.static(__dirname + '../FrontEnd/jokeservices.html'));
 app.use(cors());
 app.use(express.json());
 
