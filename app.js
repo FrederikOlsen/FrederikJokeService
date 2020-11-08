@@ -10,23 +10,23 @@ const hbs = require('hbs');
 
 //fetch / post
 fetch("https://krdo-joke-registry.herokuapp.com/api/services",
- {form:{name:"dumbjokeservice", address:"https://dumbjokeservice.herokuapp.com/",
+ {form:{name:"DumbAssJokeServiceProject", address:"https://dumbjokeservice.herokuapp.com/",
   secret:"999"}});
 
 app.set('view engine', 'hbs');
 app.set('views', __dirname + '/public');
 let jokesUrl = 'https://cloud.mongodb.com/v2/5f9a95b038b13109adf71659#clusters/detail/dumb-jokes-services';
+app.use(express.static(__dirname+'/public'));
+app.use(cors());
+app.use(express.json());
 
+/** 
 async function get(url) {
   const respons = await fetch(url);
   if (respons.status !== 200) // OK
       throw new Error(respons.status);
   return await respons.json();
 }
-
-app.use(express.static(__dirname+'/public'));
-app.use(cors());
-app.use(express.json());
 app.get('/', async (request, response) => {
   try {
       let jokes = await get(jokesUrl);
@@ -42,7 +42,7 @@ app.get('/', async (request, response) => {
       }
   }
 });
-
+*/
 
 
 
