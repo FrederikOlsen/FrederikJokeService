@@ -1,0 +1,18 @@
+{{!-- index.hbs --}}
+<!DOCTYPE html>
+<html>
+<head>
+    <title> {{title}}</title>
+</head>
+<body>
+    <table>
+        {{#each jokes}}
+            <tr>
+                <td>{{id}}</td>
+                <td>{{setUp}}</td>
+                <td>{{punchLine}}</td>
+            </tr>
+        {{/each}}
+    </table>
+</body>
+</html>

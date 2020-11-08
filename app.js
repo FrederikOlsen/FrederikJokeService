@@ -5,15 +5,42 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const port =  process.env.PORT||5500;
 const app = express();
+const hbs = require('hbs');
 
 
+app.set('view engine', 'hbs');
+app.set('views', __dirname + '/templates');
+let jokesUrl = 'indsæt link til vores cluster her';
 
+async function get(url) {
+  const respons = await fetch(url);
+  if (respons.status !== 200) // OK
+      throw new Error(respons.status);
+  return await respons.json();
+}
 // app.use(express.static(__dirname + '../FrontEnd/jokeservices.html'));
+
+
+
 app.use(express.static(__dirname+'public'));
 app.use(cors());
 app.use(express.json());
 
-
+app.get('/', async (request, response) => {
+  try {
+      let jokes = await get(jokesUrl);
+      response.render('index.hbs', {
+          title: 'Jokes',
+          jokes
+      });
+  } catch (e) {
+      if (typeof e.message === 'number')
+          response.sendStatus(e.message);
+      else {
+          response.send(e.name + ": " + e.message);
+      }
+  }
+});
 
 fetch("https://krdo-joke-registry.herokuapp.com/api/services",
  {form:{name:"dumbjokeservice", address:"https://dumbjokeservice.herokuapp.com/",
