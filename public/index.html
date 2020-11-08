@@ -14,9 +14,9 @@
     <div class="jokes" id="JokeData"></div>
     <script type="text/javascript">
 
-        var Info = "{{setUp}} <br></br> ... <br></br> {{punchLine}} <br></br></p>";
-        var template = Handlebars.compile(Info);
-        var data = template({setUp: "Hvad kalder man også en kamel med tre pukler?", punchLine: "Gravid"});
+        let Info = "{{setUp}} <br></br> ... <br></br> {{punchLine}} <br></br></p>";
+        let template = Handlebars.compile(Info);
+        let data = template({setUp: "Hvad kalder man også en kamel med tre pukler?", punchLine: "Gravid"});
   
   document.getElementById('JokeData').innerHTML += data;
   </script>
