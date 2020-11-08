@@ -9,7 +9,7 @@ const hbs = require('hbs');
 
 
 app.set('view engine', 'hbs');
-app.set('views', __dirname + '/templates');
+app.set('views', __dirname + '/public');
 let jokesUrl = 'indsæt link til vores cluster her';
 
 async function get(url) {
