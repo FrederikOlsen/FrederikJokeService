@@ -12,7 +12,6 @@ app.use(express.static(__dirname + '/FrontEnd'));
 app.use(cors());
 app.use(express.json());
 
-GET /jokeservices.html
 
 
 fetch("https://krdo-joke-registry.herokuapp.com/api/services",
