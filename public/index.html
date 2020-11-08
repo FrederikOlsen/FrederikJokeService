@@ -1,27 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>DumbJokeService</title>
-  <script src="handlebars-v4.7.6.js"></script>
-</head>
+  <script type='text/javascript' src='../app.js'></script>
+  <script src='./handlebars-v4.7.6.js'></script>
+  <link rel="stylesheet" href="styles.css">
 
-<link rel="stylesheet" href="styles.css">
+  
+  <title>DumbJokeService</title>
+</head>
  
 <body>
+    
     <div class="Overskrift">Jokeservice</div>
+    <div id="baggrundsfarve">
     <div class="beskrivelse">Af Christian K, Christian E og Frederik</div>
     <div class="indledning"> <p><br></br>Here is a joke for you:</p></div>
     <div class="jokes" id="JokeData"></div>
+
     <script type="text/javascript">
 
         let Info = "{{setUp}} <br></br> ... <br></br> {{punchLine}} <br></br></p>";
         let template = Handlebars.compile(Info);
         let data = template({setUp: "Hvad kalder man også en kamel med tre pukler?", punchLine: "Gravid"});
+        document.getElementById('JokeData').innerHTML += data;
   
-  document.getElementById('JokeData').innerHTML += data;
-  </script>
+    </script>
 
-<button class="nextJoke" onclick = "tellJoke()"> Random joke </button>
- 
+<div class="jokes1">
+    <div id="currentJokeSetUp">setUp</div>
+    <div id="">...</div>
+    <div id="currentPunchLine">punchLine</div>
+</div>
+
+    <script type="text/javascript">
+    
+    setDefaultJoke();
+    </script>
+
+<button id="nextJoke" onclick = "tellJoke()"> Random joke </button>
+
+ </div>
+
 </body>
 </html>

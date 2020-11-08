@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const port =  process.env.PORT||5500;
 const app = express();
 const hbs = require('hbs');
+const { text } = require('body-parser');
 
 //fetch / post
 fetch("https://krdo-joke-registry.herokuapp.com/api/services",
@@ -41,9 +42,6 @@ app.get('/', async (request, response) => {
       }
   }
 });
-
-
-
 
 
 //Mongoose connection________________________________________________________________________________________________________________________
@@ -89,6 +87,20 @@ app.get('/api', (req, res) => {
 
 });
 
+function setDefaultJoke() {
+    let defaultJokeSetUp = document.getElementById('currentJokeSetUp');
+    let defaultJokePunchLine = document.getElementById('currentPunchLine');
+    defaultJokeSetUp.textContent = "Hvad kalder man også en som køber og sælger katte?"; //  <--- her ville vi gerne have indsat daten fra vores database frem for denne tekststreng (m. random number generator)
+    defaultJokePunchLine.textContent = "En mishandler"; //  <--- her ville vi gerne have indsat daten fra vores database frem for denne tekststreng (m. random number generator)
+}
+
+
+function tellJoke() {
+    let defaultJokeSetUp = document.getElementById('currentJokeSetUp');
+    let defaultJokePunchLine = document.getElementById('currentPunchLine');
+    defaultJokeSetUp.textContent = "Hvad kalder man en kamel med tre pukler?"; //  <--- her ville vi gerne have indsat daten fra vores database frem for denne tekststreng
+    defaultJokePunchLine.textContent = "Gravid"; //  <--- her ville vi gerne have indsat daten fra vores database frem for denne tekststreng
+}
 
 app.listen(port, () => {
     console.log('app is listening on port: ' + `${port}`);

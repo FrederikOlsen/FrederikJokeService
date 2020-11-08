@@ -7,7 +7,7 @@ div {
 }
 
 body {
-    background-color: #F9F1EF;
+    background-color: #e4d4d1;
 }
 
 div.Overskrift {
@@ -19,6 +19,12 @@ div.Overskrift {
     justify-content: center;
     align-items: center;
     font-weight: bold;
+}
+
+#baggrundsfarve {
+    padding-top: 50px;
+    padding-bottom: 80px;
+    background-color: #F7EAE7;
 }
 
 div.beskrivelse {
@@ -34,8 +40,14 @@ div.indledning {
 
 
 div.jokes {
+    font-size: 25px;
+    color: gray;
+}
+
+div.jokes1 {
     font-size: 30px;
-    
+    padding: 20px;
+    margin: 20px;
     color: gray;
 }
 
@@ -55,14 +67,15 @@ input {
     display: block;
 }
 
-button.nextJoke {
+#nextJoke {
     
     background-color: #E1D0CC;
-    color: #5B4E4B;
-    min-height: 100px;
+    color: #71625F;
+    min-height: 60px;
     min-width: 200px;
-    font-size: 20px;
+    font-size: 25px;
     border: 2p;
+    border-color: #EDE0DD;
 }
 
 
