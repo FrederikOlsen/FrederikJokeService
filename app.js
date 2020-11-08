@@ -9,7 +9,7 @@ const app = express();
 
 
 // app.use(express.static(__dirname + '../FrontEnd/jokeservices.html'));
-app.use(express.static('public'));
+app.use(express.static(__dirname+'public'));
 app.use(cors());
 app.use(express.json());
 
@@ -22,13 +22,14 @@ fetch("https://krdo-joke-registry.herokuapp.com/api/services",
 
 /** Database giver errors udkommenteret
 const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://Christian:Dinmor123@cluster0.vtauz.mongodb.net/JokeDB?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true });
+const uri = "mongodb+srv://Fred:admin@dumb-jokes-services.woyzv.mongodb.net/test"
+const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
   const collection = client.db("test").collection("devices");
   // perform actions on the collection object
   client.close();
 });
+
 
 mongoose.connect('mongodb://localhost/JokeDB', { useNewUrlParser: true, useUnifiedTopology: true });
 // test om databasen er tændt
