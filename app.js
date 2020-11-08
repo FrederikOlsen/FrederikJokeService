@@ -5,12 +5,14 @@ const cors = require('cors');
 const bodyParser = require('body-parser');
 const port =  process.env.PORT||5500;
 const app = express();
-// maybe let instead idk
+
 
 
 app.use(express.static(__dirname + '/FrontEnd'));
 app.use(cors());
 app.use(express.json());
+
+GET /jokeservices.html
 
 
 fetch("https://krdo-joke-registry.herokuapp.com/api/services",
@@ -35,11 +37,11 @@ db.on('connection', () => {
     console.log('Databasen er tændt');
 });
 */
-
+/**
 async function main() {
 }
 main();
-/** 
+
 // new shit 
 const connect = require("connect");
 const applet = connect().use(connect.static(__dirname + '/FrontEnd'));
