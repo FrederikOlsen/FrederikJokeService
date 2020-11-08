@@ -10,7 +10,7 @@ const hbs = require('hbs');
 
 //fetch / post
 fetch("https://krdo-joke-registry.herokuapp.com/api/services",
- {form:{name:"DumbAssJokeServiceProject", address:"https://dumbjokeservice.herokuapp.com/",
+ {form:{name:"dumbjokeservice", address:"https://dumbjokeservice.herokuapp.com/",
   secret:"999"}});
 
 app.set('view engine', 'hbs');
