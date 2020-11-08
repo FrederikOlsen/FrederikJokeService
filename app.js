@@ -4,31 +4,31 @@ const fetch = require('node-fetch');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const port =  process.env.PORT||5500;
-const app = express();
+let app = express();
 const hbs = require('hbs');
 const request = require('request');
+const path = require('path');
 
 
 fetch("https://krdo-joke-registry.herokuapp.com/api/services",
- {form:{name:"dumbjokeservice", address:"https://dumbjokeservice.herokuapp.com/",
+ {form:{name:"DumbassJokeservice", address:"https://dumbjokeservice.herokuapp.com/",
   secret:"999"}});
 
-app.set('view engine', 'hbs');
-app.set('views', __dirname + '/public');
-let jokesUrl = 'https://cloud.mongodb.com/v2/5f9a95b038b13109adf71659#clusters/detail/dumb-jokes-services';
+//app.set('view engine', 'hbs');
+//app.set('views', __dirname + '/public');
+//app.use('/static', express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname + '/public'));
+app.use(cors());
+app.use(express.json());
 
+let jokesUrl = 'https://cloud.mongodb.com/v2/5f9a95b038b13109adf71659#clusters/detail/dumb-jokes-services';
+/** 
 async function get(url) {
   const respons = await fetch(url);
   if (respons.status !== 200) // OK
       throw new Error(respons.status);
   return await respons.json();
 }
-
-
-app.use(express.static(__dirname+'/public'));
-app.use(cors());
-app.use(express.json());
-
 app.get('/', async (request, response) => {
   try {
       let jokes = await get(jokesUrl);
@@ -44,11 +44,11 @@ app.get('/', async (request, response) => {
       }
   }
 });
-
+*/
 
 
 const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://Fred:admin@dumb-jokes-services.woyzv.mongodb.net/test"
+const uri = "mongodb+srv://fred:admin@dumb-jokes-services.woyzv.mongodb.net/test"
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
   const collection = client.db("test").collection("devices");
