@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>DumbJokeService</title>
+  <script src="handlebars-v4.7.6.js"></script>
+</head>
+
+<link rel="stylesheet" href="styles.css">
+ 
+<body>
+    <div class="Overskrift">Jokeservice</div>
+    <div class="beskrivelse">Af Christian K, Christian E og Frederik</div>
+    <div class="indledning"> <p><br></br>Here is a joke for you:</p></div>
+    <div class="jokes" id="JokeData"></div>
+    <script type="text/javascript">
+
+        var Info = "{{setUp}} <br></br> ... <br></br> {{punchLine}} <br></br></p>";
+        var template = Handlebars.compile(Info);
+        var data = template({setUp: "Hvad kalder man også en kamel med tre pukler?", punchLine: "Gravid"});
+  
+  document.getElementById('JokeData').innerHTML += data;
+  </script>
+
+<button class="nextJoke" onclick = "tellJoke()"> Random joke </button>
+ 
+</body>
+</html>
