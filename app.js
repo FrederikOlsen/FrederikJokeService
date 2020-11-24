@@ -6,6 +6,9 @@ const bodyParser = require('body-parser');
 const port =  process.env.PORT||5500;
 const app = express();
 const hbs = require('hbs');
+const jokesRouter = require('../jokerouter/joke');
+const handlebars = require('express-handlebars');
+const jokesController = require('./controller/controller');
 
 
 app.set('view engine', 'hbs');
@@ -25,6 +28,10 @@ async function get(url) {
 app.use(express.static(__dirname+'public'));
 app.use(cors());
 app.use(express.json());
+
+
+mongoose.connect('mongodb://localhost/JokeDB', { useNewUrlParser: true, useUnifiedTopology: true });
+
 
 app.get('/', async (request, response) => {
   try {
@@ -47,7 +54,6 @@ fetch("https://krdo-joke-registry.herokuapp.com/api/services",
   secret:"123"}});
 
 
-/** Database giver errors udkommenteret
 const MongoClient = require('mongodb').MongoClient;
 const uri = "mongodb+srv://Fred:admin@dumb-jokes-services.woyzv.mongodb.net/test"
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
@@ -64,7 +70,6 @@ const db = mongoose.connection;
 db.on('connection', () => {
     console.log('Databasen er tændt');
 });
-*/
 /**
 async function main() {
 }

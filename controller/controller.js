@@ -1,45 +1,40 @@
-const jokeUrl = 'https://krdo-joke-registry.herokuapp.com/';
-const Joke = require('../model/jokeModel');
-//const app = require('..app');
+const jokesSchema = require('../models/jokeschema');
 
+class jokeController {
 
+    constructor() {}
 
- exports.getAllJokes = async () => {
-    return await jokeModel.find();
-};
+    /**
+     * Method to get all jokes
+     */
+    async getAllJokes() {
+        return await jokesSchema.find();
+    }
 
-exports.getJokeById = (id) => {
+    /**
+     * Method to create a joke
+     * @param {*} joke to create
+     */
+    async createJoke(joke) {
+        return await jokesSchema.create(joke);
+    }
 
-};
+    /**
+     * Method to get joke by id
+     * @param {*} id to get joke by 
+     */
+    async getJokeById(id) {
+        return await jokesSchema.findOne({_id: id});
+    }
 
-exports.deleteJokeById = (id) => {
-
-};
-
-exports.createJoke = async (setup, punchline) => {
-    return await Joke.create({ setup, punchLine });
+    /**
+     * Method to delete joke by id
+     * @param {*} id to delete joke by
+     */
+    async deleteJoke(id) {
+        return await jokesSchema.findByIdAndDelete({_id: id});
+    }
 }
 
-/**
- * async function createJoke(setUp, punchLine) {
-    return await Joke.create({ setUp, punchLine });
-}
 
-async function getJoke(id) {
-    return await Joke.findOne().where(id).eq('_id').exec();
-}
-
-async function getJokes() {
-    return await Joke.find().exec();
-}
-
-async function updateJoke(setUp, punchLine) {
-    Joke.setUp = setUp;
-    Joke.punchLine = punchLine;
-    return await Joke.save();
-}
-
-async function deleteJoke(Joke) {
-    Person.deleteOne().where('_id').eq(Joke._id).exec();
-}
-**/
+module.exports = jokeController = new jokeController();
