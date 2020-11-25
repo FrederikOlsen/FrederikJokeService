@@ -1,0 +1,80 @@
+/* jokeServices.css */
+h1 {text-align: center;}
+p {text-align: center;}
+div {
+    text-align: center;
+    margin-top: 10px;
+}
+
+body {
+    background-color: #e4d4d1;
+}
+
+div.Overskrift {
+    font-size: 70px;
+    margin: auto;
+    color: #5B4E4B;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+#baggrundsfarve {
+    padding-top: 50px;
+    padding-bottom: 80px;
+    background-color: #F7EAE7;
+}
+
+div.beskrivelse {
+    font-size: 20px;
+    color: gray;
+}
+
+div.indledning {
+    font-size: 30px;
+    margin: auto;
+    color: #4F4441;
+}
+
+
+div.jokes {
+    font-size: 25px;
+    color: gray;
+}
+
+div.jokes1 {
+    font-size: 30px;
+    padding: 20px;
+    margin: 20px;
+    color: gray;
+}
+
+
+.Overskrift {
+    background-color: #F0DEDA;
+    min-height: 200px;
+  }
+
+button {
+    margin: auto;
+    display: block;
+}
+
+input {
+    margin: auto;
+    display: block;
+}
+
+#nextJoke {
+    
+    background-color: #E1D0CC;
+    color: #71625F;
+    min-height: 60px;
+    min-width: 200px;
+    font-size: 25px;
+    border: 2p;
+    border-color: #EDE0DD;
+}
+
