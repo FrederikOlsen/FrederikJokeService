@@ -15,7 +15,7 @@ const port = process.env.PORT || 5500;
 
 const app = express();
 app.set('view engine', 'hbs');
-app.set('views', './Jokeservice2/Views');
+app.set('views', './jokeservice/Views');
 
 app.use(express.json());
 app.use(cors());
@@ -47,7 +47,7 @@ app.get('/', async (req, res) => {
     console.log(aljoke);
 
     // read the file and use the callback to render
-    fs.readFile('Jokeservice2/Views/index.hbs', function (err, data) {
+    fs.readFile('jokeservice/Views/index.hbs', function (err, data) {
         if (!err) {
             // make the buffer into a string
             var templateStringify = data.toString();
