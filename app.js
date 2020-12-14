@@ -47,8 +47,8 @@ app.get('/', async (req, res) => {
     console.log(aljoke);
 
     // read the file and use the callback to render
-    fs.readFile('Jokeservice2/Views/index.hbs', function (err, data) {
-        if (!err) {
+   // fs.readFile('Jokeservice2/Views/index.hbs', function (err, data) {
+       if (!err) {
             // make the buffer into a string
             var templateStringify = data.toString();
             // call the render function
