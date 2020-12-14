@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+<head>  
+  <link rel = "stylesheet" href = "../styles.css">
+  <meta charset="utf-8" />
+  <title>DumbJokeService</title>
+</head>
+ 
+<body>
+<header>
+  <nav>
+    <h1>Dumb Joke Service</h1>
+            <p>Gruppe 2 : Christian E, Frederik O, Christian K</p>
+
+    <ol class = "jokesList">
+      <p>Vores joke database:</p>
+      {{#each jokeIterator}}
+      <li>{{setUp}} {{punchLine}}</li>
+      {{/each}}
+    </ol>
+
+    <p>Fortæl os DIN joke! (refresh siden med F5 for at få din joke til at dukke op i listen)</p>
+
+    <form action="/" method = "POST">
+    <input type = "text" name = "inputSet" id = "setupUserJoke" placeholder=" setup">
+    <input type = "text" name = "inputPunch" id = "punchLineUserJoke" placeholder="punch line">
+    <input type ="submit" value = "opret ny joke!">
+    </form>
+
+    </nav>
+
+
+</header>
+{{{body}}}
+
+
+</body>
+</html>
